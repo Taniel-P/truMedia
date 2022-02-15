@@ -1,0 +1,37 @@
+{
+  "name": "trumedia",
+  "version": "1.0.0",
+  "description": "TruMedia Project",
+  "main": "index.js",
+  "scripts": {
+    "build:client": "webpack --mode development --watch",
+    "start:server": "nodemon node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taniel-P/truMedia.git"
+  },
+  "author": "Taniel Pogharian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Taniel-P/truMedia/issues"
+  },
+  "homepage": "https://github.com/Taniel-P/truMedia#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.2",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "nodemon": "^2.0.15",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
