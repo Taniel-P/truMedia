@@ -1,5 +1,5 @@
 const axios = require('axios');
-const key = require('../../config.js').USER_ADDRESS;
+// const key = require('../../config.js').USER_ADDRESS;
 require('dotenv').config();
 const { getToken } = require('../helpers/getToken');
 
