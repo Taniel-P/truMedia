@@ -15,7 +15,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/players')
+    axios.get('/players')
       .then((data) => {
         this.setState({
           players: data.data
@@ -27,7 +27,7 @@ class App extends React.Component {
   }
 
   handleClick(id) {
-    axios.get(`http://localhost:3000/player`, {
+    axios.get(`/player`, {
       headers: {
         params: id
       }
