@@ -16,14 +16,14 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get('http://localhost:3000/players')
-    .then((data) => {
-      this.setState({
-        players: data.data
+      .then((data) => {
+        this.setState({
+          players: data.data
+        })
       })
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+      .catch((err) => {
+        console.log(err);
+      })
   }
 
   handleClick(id) {
@@ -32,19 +32,21 @@ class App extends React.Component {
         params: id
       }
     })
-    .then((data) => {
-      this.setState({
-        playerData: data.data
+      .then((data) => {
+        this.setState({
+          playerData: data.data
+        })
       })
-    })
   }
 
   render() {
     return (
       <div className="main">
-        <h1>Performance Tracker</h1>
-        <Players players={this.state.players} onClick={this.handleClick}/>
-        <PlayerData data={this.state.playerData}/>
+        <div className="title">
+          <h1>Performance Tracker</h1>
+        </div>
+        <Players players={this.state.players} onClick={this.handleClick} />
+        <PlayerData data={this.state.playerData} />
       </div>
     )
   }

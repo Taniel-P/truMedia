@@ -13,7 +13,6 @@ module.exports = {
         }
       })
       .then((playerData) => {
-        // console.log('PLAYERDATA==', playerData.data)
         res.status(200).send(playerData.data);
       })
     })

@@ -1,15 +1,15 @@
 import React from 'react';
 import Chart from "react-apexcharts";
 
-class LineChart extends React.Component {
+class AvgChart extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
 
       series: [{
-        name: "OPS",
-        data: this.props.ops
+        name: "AVG",
+        data: this.props.avg
       }],
       options: {
         chart: {
@@ -26,12 +26,12 @@ class LineChart extends React.Component {
           curve: 'straight'
         },
         title: {
-          text: 'Monthly OPS',
+          text: 'Monthly AVG',
           align: 'left'
         },
         grid: {
           row: {
-            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+            colors: ['#f3f3f3', 'transparent'],
             opacity: 0.5
           },
         },
@@ -43,11 +43,11 @@ class LineChart extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.series[0].data !== this.props.ops) {
+    if (prevState.series[0].data !== this.props.avg) {
       this.setState({
         series: [{
-          name: "OPS",
-          data: this.props.ops
+          name: "AVG",
+          data: this.props.avg
         }]
       })
     }
@@ -62,4 +62,4 @@ class LineChart extends React.Component {
   }
 }
 
-export default LineChart;
+export default AvgChart;

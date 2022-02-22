@@ -1,7 +1,7 @@
 import React from 'react';
-import LineChart from './LineChart.jsx';
+import OpsChart from './OpsChart.jsx';
+import AvgChart from './AvgChart.jsx';
 import axios from 'axios';
-import './playerData.css';
 
 const PlayerData = (props) => {
 
@@ -105,8 +105,6 @@ const PlayerData = (props) => {
     },
   }
 
-  const obpPerMonth = []
-
   for (let i = 0; i < props.data.length; i++) {
     totalStats.AB += props.data[i].AB;
     totalStats.BB += props.data[i].BB;
@@ -205,25 +203,47 @@ const PlayerData = (props) => {
 
   const totalSlg = totalStats.TB / totalStats.AB;
 
-  const totalOps = totalObp + totalSlg;
+  const totalOpsNum = totalObp + totalSlg;
+  const totalOps = parseFloat(totalOpsNum.toFixed(3)) || 0;
+
+  const totalAvgNum = totalStats.H / totalStats.AB;
+  const totalAvg = parseFloat(totalAvgNum.toFixed(3)) || 0;
 
   const monthlyOps = [];
+  const monthlyAvg = [];
 
   for (let key in months) {
     const monthlyObp = (months[key].H + months[key].BB + months[key].HBP) / (months[key].AB + months[key].BB + months[key].SF + months[key].HBP);
 
     const monthlySlg = months[key].TB / months[key].AB;
 
+    const avg = months[key].H / months[key].AB;
+    const avgPerMonth = parseFloat(avg.toFixed(3));
+
     const num = monthlyObp + monthlySlg;
     const totalMonthlyOps = parseFloat(num.toFixed(3));
-    console.log('NUMER=', totalMonthlyOps)
     monthlyOps.push(totalMonthlyOps);
+    monthlyAvg.push(avgPerMonth);
   }
 
   return (
     <div className="mainEachPlayer">
-      <h1>Player Data</h1>
+      <h1 className="mainEachPlayerTitle">Total Annual Player Stats</h1>
       <div className="totalStatsChart">
+
+        <div className="stats-item">
+          <p className="label">OPS</p>
+          <div className="stat">
+            {totalOps}
+          </div>
+        </div>
+        <div className="stats-item">
+          <p className="label">AVG</p>
+          <div className="stat">
+            {totalAvg}
+          </div>
+        </div>
+
         <div className="stats-item">
           <p className="label">AB</p>
           <div className="stat">
@@ -234,69 +254,70 @@ const PlayerData = (props) => {
         <div className="stats-item">
           <p className="label">BB</p>
           <div className="stat">
-          {totalStats.BB}
+            {totalStats.BB}
           </div>
         </div>
 
         <div className="stats-item">
           <p className="label">H</p>
           <div className="stat">
-          {totalStats.H}
+            {totalStats.H}
           </div>
         </div>
 
         <div className="stats-item">
           <p className="label">HBP</p>
           <div className="stat">
-          {totalStats.HBP}
+            {totalStats.HBP}
           </div>
         </div>
 
         <div className="stats-item">
           <p className="label">HR</p>
           <div className="stat">
-          {totalStats.HR}
+            {totalStats.HR}
           </div>
         </div>
 
         <div className="stats-item">
           <p className="label">K</p>
           <div className="stat">
-          {totalStats.K}
+            {totalStats.K}
           </div>
         </div>
 
         <div className="stats-item">
           <p className="label">PA</p>
           <div className="stat">
-          {totalStats.PA}
+            {totalStats.PA}
           </div>
         </div>
 
         <div className="stats-item">
           <p className="label">RBI</p>
           <div className="stat">
-          {totalStats.RBI}
+            {totalStats.RBI}
           </div>
         </div>
 
         <div className="stats-item">
           <p className="label">SF</p>
           <div className="stat">
-          {totalStats.SF}
+            {totalStats.SF}
           </div>
         </div>
 
         <div className="stats-item">
           <p className="label">TB</p>
           <div className="stat">
-          {totalStats.TB}
+            {totalStats.TB}
           </div>
         </div>
-
       </div>
-      <LineChart ops={monthlyOps} />
-
+      <div className="charts">
+        <OpsChart ops={monthlyOps} />
+        <AvgChart avg={monthlyAvg} />
+      </div>
     </div>
   )
 }

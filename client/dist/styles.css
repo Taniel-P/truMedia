@@ -1,0 +1,56 @@
+.main {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "players stat";
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 20% 1fr;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  height: 100vh;
+  margin: 0;
+  }
+
+  .title {
+    grid-area: header;
+    border-bottom:  .15em solid black;
+    }
+
+  .stats-item {
+    float:left;
+    padding-left: 3em;
+    padding-bottom: 2em;
+    }
+
+  .mainEachPlayer {
+    grid-area: stat;
+    display: grid;
+    grid-template-areas:
+    "statsTitle"
+    "statistics"
+    "charts";
+    grid-template-rows: 80px 100px 1fr;
+  }
+
+  .mainEachPlayerTitle {
+    grid-area: statsTitle;
+  }
+
+  .totalStatsChart {
+    grid-area: statistics;
+    border-bottom:  .15em solid black;
+  }
+
+  .charts {
+    grid-area: charts;
+    padding-top: 1em;
+  }
+
+  .mainPlayers {
+    grid-area: players;
+    border-right: .15em solid black;
+    }
+
+    .eachplayer {
+      cursor: pointer;
+    }
