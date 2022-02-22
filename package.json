@@ -6,7 +6,7 @@
   "scripts": {
     "build:client": "webpack --mode development --watch",
     "start:server": "nodemon node server/index.js",
-    "start": "nodemon node server/index.js webpack --mode development --watch",
+    "start": "node server/index.js webpack --mode development --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
