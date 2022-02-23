@@ -1,5 +1,4 @@
 const axios = require('axios');
-// const key = require('../../config.js').USER_ADDRESS;
 require('dotenv').config();
 const { getToken } = require('../helpers/getToken');
 
@@ -14,7 +13,6 @@ module.exports = {
         }
       })
       .then((playerData) => {
-
         res.status(200).send(playerData.data);
       })
     })
