@@ -13,5 +13,5 @@ app.get('/players', players)
 app.get('/player', player)
 
 app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`);
+  console.log(`Listening at port: ${port}`);
 })

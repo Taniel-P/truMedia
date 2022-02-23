@@ -14,6 +14,7 @@ module.exports = {
         }
       })
       .then((listOfPlayers) => {
+        res.header("Access-Control-Allow-Origin", "*");
         res.status(200).send(listOfPlayers.data);
       })
     })
