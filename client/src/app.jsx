@@ -22,7 +22,7 @@ class App extends React.Component {
         })
       })
       .catch((err) => {
-        console.log(err);
+        console.log('/players ERR', err);
       })
   }
 
@@ -36,6 +36,9 @@ class App extends React.Component {
         this.setState({
           playerData: data.data
         })
+      })
+      .catch((err) => {
+        console.log('/player ERR', err)
       })
   }
 
