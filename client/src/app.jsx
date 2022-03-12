@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Players from './components/Players.jsx';
 import PlayerData from './components/PlayerData.jsx';
+import GameStats from './components/GameStats.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class App extends React.Component {
         </div>
         <Players players={this.state.players} onClick={this.handleClick} />
         <PlayerData data={this.state.playerData} />
+        <GameStats data={this.state.playerData} />
       </div>
     )
   }
