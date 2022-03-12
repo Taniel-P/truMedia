@@ -62,4 +62,4 @@ class EachGame extends React.Component {
   }
 }
 
-export default EachGame
+export default EachGame;
