@@ -16,7 +16,6 @@ const GameStats = (props) => {
 
   return (
     <div className="gameStats">
-
       <table className="statsTable">
         <thead>
           <tr className="tr">
