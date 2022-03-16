@@ -25,7 +25,7 @@
     "statistics"
     "charts";
     grid-template-rows: 80px 100px 1fr;
-  } */
+  }
 
   .mainEachPlayerTitle {
     grid-area: statsTitle;
@@ -64,7 +64,7 @@
 }
 
 .totalStatsChart {
-  width: 100%;
+  width: 55%;
   border-collapse: collapse;
 }
 
@@ -111,7 +111,7 @@
 
 .playerDataTbody td{
   padding: 0.5em;
-  padding-bottom: 2em;
+  margin-bottom: 2em;
   border-bottom: 1px solid #ccc;
 }
 
