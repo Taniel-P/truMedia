@@ -229,91 +229,64 @@ const PlayerData = (props) => {
   return (
     <div className="mainEachPlayer">
       <h1 className="mainEachPlayerTitle">Total Annual Player Stats</h1>
-      <div className="totalStatsChart">
-
-        <div className="stats-item">
-          <p className="label">OPS</p>
-          <div className="stat">
-            {totalOps}
-          </div>
-        </div>
-        <div className="stats-item">
-          <p className="label">AVG</p>
-          <div className="stat">
-            {totalAvg}
-          </div>
-        </div>
-
-        <div className="stats-item">
-          <p className="label">AB</p>
-          <div className="stat">
-            {totalStats.AB}
-          </div>
-        </div>
-
-        <div className="stats-item">
-          <p className="label">BB</p>
-          <div className="stat">
-            {totalStats.BB}
-          </div>
-        </div>
-
-        <div className="stats-item">
-          <p className="label">H</p>
-          <div className="stat">
-            {totalStats.H}
-          </div>
-        </div>
-
-        <div className="stats-item">
-          <p className="label">HBP</p>
-          <div className="stat">
-            {totalStats.HBP}
-          </div>
-        </div>
-
-        <div className="stats-item">
-          <p className="label">HR</p>
-          <div className="stat">
-            {totalStats.HR}
-          </div>
-        </div>
-
-        <div className="stats-item">
-          <p className="label">K</p>
-          <div className="stat">
-            {totalStats.K}
-          </div>
-        </div>
-
-        <div className="stats-item">
-          <p className="label">PA</p>
-          <div className="stat">
-            {totalStats.PA}
-          </div>
-        </div>
-
-        <div className="stats-item">
-          <p className="label">RBI</p>
-          <div className="stat">
-            {totalStats.RBI}
-          </div>
-        </div>
-
-        <div className="stats-item">
-          <p className="label">SF</p>
-          <div className="stat">
-            {totalStats.SF}
-          </div>
-        </div>
-
-        <div className="stats-item">
-          <p className="label">TB</p>
-          <div className="stat">
-            {totalStats.TB}
-          </div>
-        </div>
-      </div>
+      <table className="totalStatsChart">
+        <thead className="playerDataThead">
+          <tr>
+            <th>
+              <button>OPS</button>
+            </th>
+            <th>
+              <button>AVG</button>
+            </th>
+            <th>
+              <button>AB</button>
+            </th>
+            <th>
+              <button>BB</button>
+            </th>
+            <th>
+              <button>H</button>
+            </th>
+            <th>
+              <button>HBP</button>
+            </th>
+            <th>
+              <button>HR</button>
+            </th>
+            <th>
+              <button>K</button>
+            </th>
+            <th>
+              <button>PA</button>
+            </th>
+            <th>
+              <button>RBI</button>
+            </th>
+            <th>
+              <button>SF</button>
+            </th>
+            <th>
+              <button>TB</button>
+            </th>
+          </tr>
+        </thead>
+        <tbody className="playerDataTbody">
+          <tr>
+            <td>{totalOps}</td>
+            <td>{totalAvg}</td>
+            <td>{totalStats.AB}</td>
+            <td>{totalStats.BB}</td>
+            <td>{totalStats.H}</td>
+            <td>{totalStats.HBP}</td>
+            <td>{totalStats.HR}</td>
+            <td>{totalStats.K}</td>
+            <td>{totalStats.PA}</td>
+            <td>{totalStats.RBI}</td>
+            <td>{totalStats.SF}</td>
+            <td>{totalStats.TB}</td>
+          </tr>
+        </tbody>
+      </table>
       <div className="charts">
         <OpsChart ops={monthlyOps} />
         <AvgChart avg={monthlyAvg} />

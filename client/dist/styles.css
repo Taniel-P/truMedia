@@ -2,7 +2,8 @@
   display: grid;
   grid-template-areas:
     "header header"
-    "players stat";
+    "players stat"
+    "players allStats";
   grid-template-rows: 80px 1fr;
   grid-template-columns: 20% 1fr;
   grid-row-gap: 10px;
@@ -16,12 +17,6 @@
     border-bottom:  .15em solid black;
     }
 
-  .stats-item {
-    float:left;
-    padding-left: 3em;
-    padding-bottom: 2em;
-    }
-
   .mainEachPlayer {
     grid-area: stat;
     display: grid;
@@ -30,20 +25,16 @@
     "statistics"
     "charts";
     grid-template-rows: 80px 100px 1fr;
-  }
+  } */
 
   .mainEachPlayerTitle {
     grid-area: statsTitle;
   }
 
-  .totalStatsChart {
-    grid-area: statistics;
-    border-bottom:  .15em solid black;
-  }
-
   .charts {
     grid-area: charts;
     padding-top: 1em;
+    border-top: 2px solid black;
   }
 
   .mainPlayers {
@@ -54,3 +45,76 @@
     .eachplayer {
       cursor: pointer;
     }
+
+
+.playerDataThead th{
+  text-align: left;
+  border-bottom: 2px solid black;
+}
+
+.playerDataThead button{
+  border: 0;
+  border-radius: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  padding: 1em;
+  margin-bottom: 1px;
+  cursor: pointer;
+}
+
+.totalStatsChart {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.statsTable {
+  grid-area: allStats;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gameStatsThead th {
+  text-align: left;
+  border-bottom: 2px solid black;
+}
+
+.gameStatsThead button {
+  border: 0;
+  border-radius: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  padding: 1em;
+  margin-bottom: 1px;
+  cursor: pointer;
+}
+
+.gameStatsThead button.ascending::after {
+  content: '↓';
+  display: inline-block;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.gameStatsThead button.descending::after {
+  content: '↑';
+  display: inline-block;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.gameStatsTbody td {
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+.playerDataTbody td{
+  padding: 0.5em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #ccc;
+}
+
+.gameStatsTbody tr:hover {
+  background-color: #eee;
+}
